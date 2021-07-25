@@ -1,22 +1,48 @@
 .navContainer {
   height: 11vh;
-  padding: 0 0.5rem;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   color: #5704DD;
   background-color: #141414;
 }
 
+.centerLogo {
+  width: 25vw;
+}
+
+.navLinks {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  justify-content: space-around;
+  color: white;
+}
+
+.centerSearch {
+  width: 45vw;
+  display: flex;
+  padding: 10px;
+}
+
+.centerSearch input {
+  border-radius: 6px;
+  height: 4vh;
+  width: 25vw;
+  border: 2px solid black;
+}
+
+.centerSearch {}
+
 .mainContainer {
-  height: 89vh;
+  height: 78vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  
 }
 
 .svgContainer {
@@ -65,6 +91,66 @@
   cursor: pointer;
 }
 
+.infoButton{
+  background-color: #5704DD;
+  border: 3px solid #5704DD;
+  border-radius: 15px;
+  height: 3rem;
+  width: 9rem;
+  font-size: 19px;
+  margin-left: 4rem;
+  padding: 5px;
+  margin-top: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  transition: ease 0.7s;
+}
+
+.infoButton:hover{
+  background-color: #5704DD;
+  border: 3px solid #5704DD;
+  border-radius: 7px;
+  height: 3rem;
+  width: 9rem;
+  font-size: 19px;
+  color: #fff;
+  padding: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: ease 0.7s;
+  cursor: pointer;
+}
+
+.info2Button{
+  background-color: #fe6684;
+  border: 3px solid #fe6684;
+  border-radius: 15px;
+  height: 3rem;
+  width: 9rem;
+  font-size: 19px;
+  margin-left: 4rem;
+  padding: 5px;
+  margin-top: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  transition: ease 0.7s;
+}
+
+.info2Button:hover{
+  background-color: #fe6684;
+  border: 3px solid #fe6684;
+  border-radius: 7px;
+  height: 3rem;
+  width: 9rem;
+  font-size: 19px;
+  color: #fff;
+  padding: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: ease 0.7s;
+  cursor: pointer;
+}
+
 .signButton{
   background-color: #fe6684;
   border: 3px solid #fe6684;
@@ -98,6 +184,18 @@
   font-size: 40px;
 }
 
+.cardSubTitle{
+  font-size: 40px;
+  text-align: left;
+  padding: 0rem 4rem;
+}
+
+.cardSubDesc{
+  font-size: 1rem;
+  text-align: left;
+  padding: 0rem 4rem;
+}
+
 .cardFooter{
   font-size: 15px;
 }
@@ -111,11 +209,33 @@
   width: 1px;
   height: 5vh;
   margin: 1rem;
-  background: rgb(218, 218, 218);
+  background: #fff;
 }
 
 .flexContainer {
   display: flex;
   width: 100%;
   align-items: center;
+}
+
+.CrossIcon{
+  width: 13vw;
+}
+
+.mainNonProfitCard {
+  width: 60vw;
+  height: auto;
+  padding: 1rem;
+  margin-bottom:1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+
+.centerText {
+  text-align: center;
+  color: #c8c8c8;
 }
