@@ -1,0 +1,45 @@
+.postImage {
+    padding: 10px;
+    border-radius: 100px;
+    width: 20vw;
+}
+
+.postContainer {
+    width: 100vw;
+    font-family: 'Poppins';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flexRow {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.postName {
+    color: white;
+    font-weight: 300;
+}
+
+.postButtonContainer button {
+    width: 10vw;
+    font-size: 17px;
+    padding: 10px;
+    margin: 10px;
+    background: #5704DD;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: 200;
+    font-family: 'Poppins';
+}
+
+.postDescription {
+    max-width: 50vw;
+    word-wrap: break-word;
+}
