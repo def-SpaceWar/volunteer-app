@@ -1,4 +1,6 @@
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function NavBar() {
     return (
@@ -9,12 +11,16 @@ export default function NavBar() {
                 </form>
             </div>
             <div className={styles.centerLogo}>
-                <img className={styles.logo} src="https://cdn.discordapp.com/attachments/865389806376321075/868312279517638736/hackathon_logo_2.png" alt="VolunteerUP"/>
+                <Image className={styles.logo}
+                       src="/hackathon_logo.png"
+                       alt="VolunteerUP"
+                       width="100" height="100"
+                       alt="volunteer.up" />
             </div>
             <div className={styles.centerLogo}>
                 <ui className={styles.navLinks}>
-                    <li><a href="/login"><p>Login</p></a></li>
-                    <li><a href="/login"><p>Sign Up</p></a></li>
+                    <li><Link href="/login"><p>Login</p></Link></li>
+                    <li><Link href="/login"><p>Sign Up</p></Link></li>
                 </ui>
             </div>
         </div>

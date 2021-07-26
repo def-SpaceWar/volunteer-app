@@ -5,7 +5,7 @@ const Post = () => {
   const { pid } = router.query
 
   return (
-    
+      <p>{ pid }</p>
   )
 }
 
