@@ -8,6 +8,9 @@ import Link from 'next/link'
 export default function Login() {
     return (
         <div className={styles.container}>
+            <Head>
+                <title>VolunteerUP | Form Finished!</title>
+            </Head>
             <Link href='/'><button className={styles.btn}>Home</button></Link>
             <h1 className={styles.center}>Form Submited!</h1>
             <div className={styles.confetti}></div>

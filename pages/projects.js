@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Projects.module.css'
 import NavBar from './navbar'
+import firebase from './firebaseInit';
+
+const db = firebase.firestore()
 
 function ProjectCard({name, url, description, img}) {
     if (description.length > 140) {
@@ -25,6 +28,13 @@ function ProjectCard({name, url, description, img}) {
     )
 }
 
+// db.collection("Projects").get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//         const data = doc.data()
+//         console.log(data)
+//     });
+// });
+
 export default function Projects() {
     return (
         <div className={styles.container}>
@@ -38,30 +48,30 @@ export default function Projects() {
       <br />
             <h1 className={styles.projTitle}>Recent</h1>
             <div className={styles.slider}>
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
             </div>
             <h1 className={styles.projTitle}>Most Members</h1>
             <div className={styles.slider}>
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
             </div>
             <h1 className={styles.projTitle}>Other</h1>
             <div className={styles.slider}>
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
-                <ProjectCard name="St Jude's" url='/post/129789y21635237' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
+                <ProjectCard name="St Jude's" url='/post/gxi1Qu3eFHnGZkmebgPS' description="St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases." img='https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj' />
             </div>
         </div>
     )

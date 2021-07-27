@@ -1,32 +1,48 @@
 import {useRouter} from 'next/router'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import NavBar from '../navbar'
 import styles from '../../styles/Infopage.module.css'
 import ProjectCard from '../projects'
+import database from '../firebaseInit'
 
-const db = [
-    {
-        pid: '129789y21635237',
-        imgSrc: 'https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj',
-        name: 'St. Judes',
-        description: "St. Judes is an amazing organization working to research cancer and save childrens' lives!"
-    }
-]
+const db = database.firestore()
+
+// const db = [
+//     {
+//         pid: '129789y21635237',
+//         imgSrc: 'https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj',
+//         name: 'St. Judes',
+//         description: "St. Judes is an amazing organization working to research cancer and save childrens' lives!"
+//     }
+// ]
 
 const Post = () => {
     const router = useRouter()
+    const [data, setData] = useState(false);
     const { pid } = router.query
     let imgSrc = '/hackathon_logo.png'
     let name = 'Insert Name Here'
     let description = 'Insert Description Here'
+
+    db.collection("Projects").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            if (doc.id == pid) {
+                setData(doc.data());
+            }
+        });
+    });    
     
-    for (let i = 0; i < db.length; i++) {
-        if (db[i].pid == pid) {
-            imgSrc = db[i].imgSrc;
-            name = db[i].name;
-            description = db[i].description;
+    // useEffect(() => {
+    if (data) {
+        console.log(data.imgSrc);
+        for (let i = 0; i < data.length; i++) {
+            imgSrc = data[i].image;
+            name = data[i].name;
+            description = data[i].description;
         }
     }
+    // }, [data])
 
     return (    
         <div className={styles.container}>

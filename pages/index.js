@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>VolunteerUP: Home</title>
+        <title>VolunteerUP | Home</title>
         <meta
           name="description"
           content="Post & Join Volunteer groups! Helping is happiness!"
@@ -53,14 +53,15 @@ export default function Home() {
           />
         </div>
       </div>
+      <br />
       <h1 className={styles.centerText}>Featured Non-Profit</h1>
 
       <div className={styles.mainNonProfitCard}>
         <Image
           className={styles.CrossIcon}
           src="http://redcrossyouth.org/wp-content/uploads/2019/02/cropped-ARC_Logo_Bttn_Vert_RGB-e1549942783702.png"
-          width="200"
-          height="200"
+          width="300"
+          height="300"
         />
         <div>
           <h1 className={styles.cardSubTitle}>American Red Cross</h1>
@@ -77,15 +78,12 @@ export default function Home() {
           </a>
         </div>
       </div>
-
-      <br />
-
       <div className={styles.mainNonProfitCard}>
         <Image
           className={styles.CrossIcon}
           src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Black_Lives_Matter_logo.svg"
-          width="200"
-          height="200"
+          width="250"
+          height="250"
         />
         <div>
           <h1 className={styles.cardSubTitle}>Black Lives Matter</h1>
@@ -103,15 +101,13 @@ export default function Home() {
       </div>
 
       <center>
-        <br />
-
         <Link href="/projects">
           <button className={styles.info3Button}>
             <strong>More Projects</strong>
           </button>
         </Link>
 
-        <div className={styles.centerText}>
+        <div className={styles.footerText}>
           <Link href="/featured-form">
             <p>Wanna be featured? Fill out this form</p>
           </Link>

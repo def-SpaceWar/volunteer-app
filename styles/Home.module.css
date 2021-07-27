@@ -66,7 +66,7 @@
   border-radius: 6px;
   height: 4vh;
   width: 25vw;
-  border: 3px solid #8a0055;
+  border: 3px solid #fe6684;
 }
 
 
@@ -187,19 +187,19 @@
 }
 
 .info3Button{
-  background-color: #9afe8c;
-  border: 3px solid #9afe8c;
+  background-color: #fe6684;
+  border: 3px solid #fe6684;
   border-radius: 15px;
   height: 3rem;
   width: 9rem;
   font-size: 19px;
-  color: #000;
+  color: #fff;
   transition: ease 0.7s;
 }
 
 .info3Button:hover{
-  background-color: #9afe8c;
-  border: 3px solid #9afe8c;
+  background-color: #fe6684;
+  border: 3px solid #fe6684;
   border-radius: 7px;
   height: 3rem;
   width: 9rem;
@@ -309,8 +309,26 @@
 
 .centerText:hover {
   text-align: center;
-  color: #aaaaff;
+  color: #ad7bfd;
   margin-top: 6rem;
   transition-property: color;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
+}
+
+.footerText {
+  text-align: center;
+  color: #c8c8c8;
+  margin-top: 2rem;
+  transition-property: color;
+  transition-duration: 0.4s;
+  
+  font-display: underline;
+}
+
+.footerText:hover {
+  text-align: center;
+  color: #ad7bfd;
+  margin-top: 2rem;
+  transition-property: color;
+  transition-duration: 0.4s;
 }
