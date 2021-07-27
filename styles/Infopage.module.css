@@ -26,17 +26,25 @@
     font-weight: 300;
 }
 
-.postButtonContainer button {
-    width: 10vw;
+.postButton {
+    width: auto;
     font-size: 17px;
     padding: 10px;
     margin: 10px;
-    background: #5704DD;
+    background-color: #5704DD;
     border: none;
     color: white;
     border-radius: 10px;
     font-weight: 200;
     font-family: 'Poppins';
+    transition-property : background-color;
+    transition-duration : 0.4s;
+}
+
+.postButton:hover {
+    background-color: #6302ff;
+    transition-property : background-color;
+    transition-duration : 0.2s;
 }
 
 .postDescription {

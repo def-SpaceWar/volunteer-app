@@ -5,6 +5,7 @@ module.exports = {
             'cdn.discordapp.com',
             'redcrossyouth.org',
             'upload.wikimedia.org',
+            'yt3.ggpht.com',
         ],
     },
 }

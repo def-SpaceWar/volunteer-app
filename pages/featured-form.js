@@ -1,16 +1,18 @@
 import Head from 'next/head'
 import styles from '../styles/Form.module.css'
 import NavBar from './navbar'
+import Link from 'next/link'
 
-export default function Login() {
+export default function FeaturedForm() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>VolunteerUP</title>
-        <meta name="description" content="Post & Join Volunteer groups! Helping is happiness!" />
-        <link rel="icon" href="https://cdn.discordapp.com/attachments/865389806376321075/868312279517638736/hackathon_logo_2.png"/>
+        <title>VolunteerUP | Featured Form</title>
       </Head>
       <NavBar />
+      <br />
+      <br />
+      <br />
       <div className={styles.centerForm}>
           <form>
               <h1>Featured Form</h1>
@@ -23,10 +25,10 @@ export default function Login() {
               <input placeholder="Why Choose You?" required/>
               <br />
               <center>
-                <button type="submit">Submit</button>
+              <Link href="/form-done"><button type="submit">Submit</button></Link>
               </center>
           </form>
       </div>
     </div>
   )
-} 
+}

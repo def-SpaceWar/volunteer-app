@@ -1,6 +1,6 @@
 import NavBar from './navbar'
 
-export default function Custom404() {
+export default function Custom500() {
     return (
         <div>
             <NavBar />
@@ -8,8 +8,8 @@ export default function Custom404() {
         <br />
         <br />
         <br />
-            <h1>404</h1>
-            <h3>Page not found.</h3>
+            <h1>500</h1>
+            <h3>Internal Server Error</h3>
             <style jsx>{`
                 h1 {
                     padding-left: 50px;

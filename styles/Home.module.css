@@ -7,10 +7,19 @@
   justify-content: center;
   color: #5704DD;
   background-color: #141414;
+  padding-top: 10px;
+  position: fixed;
+  top: 0px;
+  z-index: 1100;
 }
 
 .centerLogo {
   width: 25vw;
+}
+
+.centerLogo:hover {
+  width: 25vw;
+  cursor: pointer;
 }
 
 .navLinks {
@@ -21,20 +30,46 @@
   color: white;
 }
 
+.navItem {
+  color: #fff;
+  background-color: #5704DD;
+  transition-property : color, background-color;
+  transition-duration : 0.4s;
+  
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.navItem:hover {
+  color: #8a37ff;
+  background: #fff;
+  transition-property : color, background-color;
+  transition-duration : 0.5s;
+}
+
 .centerSearch {
   width: 45vw;
   display: flex;
   padding: 10px;
+  transition: ease-in-out 0.2s;
 }
 
 .centerSearch input {
   border-radius: 6px;
   height: 4vh;
   width: 25vw;
-  border: 2px solid black;
+  border: none;
+  transition: ease-in-out 0.2s;
 }
 
-.centerSearch {}
+.centerSearch input:hover {
+  border-radius: 6px;
+  height: 4vh;
+  width: 25vw;
+  border: 3px solid #8a0055;
+}
+
+
 
 .mainContainer {
   height: 78vh;
@@ -50,7 +85,7 @@
 }
 
 .svg {
-  width: 40vw;
+  width: 80vw;
 }
 
 .InfoContainer {
@@ -151,6 +186,29 @@
   cursor: pointer;
 }
 
+.info3Button{
+  background-color: #9afe8c;
+  border: 3px solid #9afe8c;
+  border-radius: 15px;
+  height: 3rem;
+  width: 9rem;
+  font-size: 19px;
+  color: #000;
+  transition: ease 0.7s;
+}
+
+.info3Button:hover{
+  background-color: #9afe8c;
+  border: 3px solid #9afe8c;
+  border-radius: 7px;
+  height: 3rem;
+  width: 9rem;
+  font-size: 19px;
+  color: #000;
+  transition: ease 0.7s;
+  cursor: pointer;
+}
+
 .signButton{
   background-color: #fe6684;
   border: 3px solid #fe6684;
@@ -209,7 +267,11 @@
   width: 1px;
   height: 5vh;
   margin: 1rem;
-  background: #fff;
+  background: #c8c8c8;
+}
+
+.dropDown{
+
 }
 
 .flexContainer {
@@ -238,4 +300,17 @@
 .centerText {
   text-align: center;
   color: #c8c8c8;
+  margin-top: 6rem;
+  transition-property: color;
+  transition-duration: 0.4s;
+  
+  font-display: underline;
+}
+
+.centerText:hover {
+  text-align: center;
+  color: #aaaaff;
+  margin-top: 6rem;
+  transition-property: color;
+  transition-duration: 0.2s;
 }

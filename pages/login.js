@@ -6,11 +6,12 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>VolunteerUP</title>
-        <meta name="description" content="Post & Join Volunteer groups! Helping is happiness!" />
-        <link rel="icon" href="https://cdn.discordapp.com/attachments/865389806376321075/868312279517638736/hackathon_logo_2.png"/>
+        <title>VolunteerUP | Login</title>
       </Head>
       <NavBar />
+      <br />
+      <br />
+      <br />
       <div className={styles.centerForm}>
           <form>
               <h1>Login</h1>

@@ -1,95 +1,96 @@
-.projCardTitle{
-    font-size: 30px;
-    text-align: left;
-    padding: 0rem 2rem;
-    margin-bottom: .1rem;
-}
-  
-.projCardDesc{
-    font-size: 1rem;
-    text-align: left;
-    padding: 0rem 1rem 0rem 2rem;
-    margin: 0px;
+.projCardTitle {
+  font-size: 30px;
+  text-align: left;
+  padding: 0rem 2rem;
+  margin-bottom: 0.1rem;
 }
 
-.projCardImg{
-    max-height: 30vh;
-    border-radius: 15px;
-    margin: 0px;
+.projCardDesc {
+  font-size: 1rem;
+  text-align: left;
+  padding: 0rem 1rem 0rem 2rem;
+  margin: 0px;
 }
 
-.projTitle{
-    margin-left: 1rem;
-    font-weight: 500;
-    color:#fff;
+.projCardImg {
+  max-height: 30vh;
+  border-radius: 15px;
+  margin: 0px;
+}
+
+.projTitle {
+  margin-left: 1rem;
+  font-weight: 500;
+  color: #fff;
 }
 
 .projCard {
-    width: 40vw;
-    max-height: 40vh;
-    padding: .7rem;
-    margin-bottom:1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 17px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    margin-top: 1%;
-    margin: 10px;
+  width: 40vw;
+  max-height: 40vh;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  margin-top: 1%;
+  margin: 10px;
 }
 
-.projCardLink{
-    background-color: #fe6684;
-    border: 3px solid #fe6684;
-    border-radius: 10px;
-    height: 2.7rem;
-    width: 7rem;
-    font-size: 19px;
-    margin-left: 2rem;
-    padding: 4px;
-    margin-top: .1rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    transition: ease 0.7s;
+.projCardLink {
+  background-color: #fe6684;
+  border: 3px solid #fe6684;
+  border-radius: 10px;
+  height: 2.7rem;
+  width: 7rem;
+  font-size: 19px;
+  margin-left: 2rem;
+  padding: 4px;
+  margin-top: 0.1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  transition: ease 0.7s;
 }
 
-.projCardLink:hover{
-    border-radius: 7px;
-    cursor: pointer;
+.projCardLink:hover {
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #ff5174;
+  border: 3px solid #ff5174;
 }
 
 .space {
-    width: 4vh;
-    height: 10vh;
-    background: red;
+  width: 4vh;
+  height: 10vh;
+  background: red;
 }
 .slider {
-    width: 98vw;
-    height: 45vh;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    overflow-x: scroll;
+  width: 98vw;
+  height: 45vh;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  overflow-x: scroll;
 }
-.slider ProjectCard{
-    margin-right: 5px;
+.slider ProjectCard {
+  margin-right: 5px;
 }
-  
-  .slider::-webkit-scrollbar {
-    height: 10px;
-  }
-  .slider::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-  .slider::-webkit-scrollbar-thumb {
-    background: white; 
-    border-radius: 10px;
-  }
-  .slider::-webkit-scrollbar-thumb:hover {
-    background: rgb(235, 235, 235); 
-  }
-  
+
+.slider::-webkit-scrollbar {
+  height: 10px;
+}
+.slider::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.slider::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+.slider::-webkit-scrollbar-thumb:hover {
+  background: rgb(235, 235, 235);
+}
