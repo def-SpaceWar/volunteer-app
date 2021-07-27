@@ -12,10 +12,9 @@ export default function NavBar() {
             </div>
             <div className={styles.centerLogo}>
                 <Image className={styles.logo}
-                       src="/hackathon_logo.png"
-                       alt="VolunteerUP"
-                       width="100" height="100"
-                       alt="volunteer.up" />
+                    src="/hackathon_logo.png"
+                    alt="VolunteerUP"
+                    width="100" height="100" />
             </div>
             <div className={styles.centerLogo}>
                 <ui className={styles.navLinks}>
