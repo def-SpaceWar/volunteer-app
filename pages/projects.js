@@ -3,11 +3,11 @@ import Image from 'next/image'
 import styles from '../styles/Projects.module.css'
 import NavBar from './navbar'
 import firebase from './firebaseInit';
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 const db = firebase.firestore()
 
-function ProjectCard({ name, url, description, img, time }) {
+function ProjectCard({name, url, description, img, time}) {
     if (description.length > 140) {
         let desc = ''
         for (let i = 0; i < 140; i++) {
