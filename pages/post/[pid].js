@@ -62,18 +62,18 @@ const Post = ({ params }) => {
                 <div className={styles.flexRow}>
                     <div className={styles.postImage}>
                         <Image className={styles.postImage} src={global.imgSrc} width="500%" height="500%" />
-                        <div className>
-                            <h1 className={styles.postName}>{global.name}</h1>
-                            <button className={styles.postButton}>Join Now</button>
-                            <br />
-                            <button className={styles.postButton} >Share</button>
-                        </div>
+                    </div>
+                    <div className={styles.contain}>
+                        <h1 className={styles.postName}>{global.name}</h1>
+                        <p className={styles.postLocation}>Location: {global.location}</p>
+                        <p className={styles.postMembers}>Members: {global.members}</p>
+                        <p className={styles.postEmail}>Email: {global.email}</p>
+                        <p className={styles.postPhone}>Phone Number: {global.phone}</p>
+                        <button className={styles.postButton}>Join Now</button>
+                        <br />
+                        <button className={styles.postButton} >Share</button>
                     </div>
                 </div>
-                <p className={styles.postLocation}>Location: {global.location}</p>
-                <p className={styles.postMembers}>Members: {global.members}</p>
-                <p className={styles.postEmail}>Email: {global.email}</p>
-                <p className={styles.postPhone}>Phone Number: {global.phone}</p>
                 <p className={styles.postDescription}>{global.description}</p>
             </div>
         </div >

@@ -58,7 +58,7 @@ export default function NavBar() {
             <ul className={styles.results}>
               {dropDown.map(({ name, id }) => (
                 <li className={styles.result} key={id}>
-                  <Link href="/posts/[id]" as={`/post/${id}`}>
+                  <Link href="/post/[pid]" as={`/post/${id}`}>
                     <a>{name}</a>
                   </Link>
                 </li>

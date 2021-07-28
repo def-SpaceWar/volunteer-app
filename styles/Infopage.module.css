@@ -7,6 +7,8 @@
 .postLocation, .postMembers, .postEmail, .postPhone {
     margin: 2px;
     font-size: small;
+    text-align: left;
+    width: 20vw;
 }
 
 .postContainer {
@@ -16,14 +18,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     flex-wrap: wrap;
 }
+
 
 .flexRow {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    width: 100vw;
+    flex-wrap: nowrap;
+}
+
+.contain {
+    margin: 10px;
 }
 
 .postName {
@@ -35,7 +43,8 @@
     width: auto;
     font-size: 17px;
     padding: 10px;
-    margin: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     background-color: #5704DD;
     border: none;
     color: white;
