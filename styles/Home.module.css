@@ -13,6 +13,29 @@
   z-index: 1100;
 }
 
+.results {
+  width: 25vw;
+  list-style: none;
+  overflow: hidden;
+  margin: -1.5em 0 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 3.2%;
+  right: 0;
+}
+
+.result {
+  background: #0070f3;
+  color: #eee;
+  margin: 0 0 9px;
+  padding: 6px;
+}
+
+.result a {
+  color: #eee;
+}
+
 .centerLogo {
   width: 25vw;
 }

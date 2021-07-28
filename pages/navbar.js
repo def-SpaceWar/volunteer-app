@@ -1,13 +1,70 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect, useCallback, useRef } from 'react'
+import firebase from './firebaseInit';
+
+const db = firebase.firestore()
 
 export default function NavBar() {
+  let data;
+  const [results, setResults] = useState([]);
+  const [dropDown, setDropDown] = useState([]);
+  const searchRef = useRef(null)
+  const [active, setActive] = useState(false)
+
+  useEffect(() => {
+    db.collection("Projects").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+            data = doc.data();
+            setResults([
+                ...results,
+                {
+                  name: data.name,
+                  location: data.location,
+                  id: doc.id
+                }
+            ]);
+      });
+    });
+  }, [])
+
+  function getSearchDropdown(input) {
+    const guess = results.filter(post => post.name.toLowerCase().includes(input) || post.location.toLowerCase().includes(input))
+    if (guess.length > 5) {
+      guess.length = 5;
+    }
+    setDropDown(guess);
+  }
+
+  const onFocus = useCallback(() => {
+    setActive(true)
+    window.addEventListener('click', onClick)
+  }, [])
+
+  const onClick = useCallback((event) => {
+    if (searchRef.current && !searchRef.current.contains(event.target)) {
+      setActive(false)
+      window.removeEventListener('click', onClick)
+    }
+  }, [])
+
   return (
     <div className={styles.navContainer}>
       <div className={styles.centerSearch}>
-        <form action="/login" method="GET">
-          <input type="text" placeholder="Search..." />
+        <form ref={searchRef}>
+          <input list="autoGuess" type="text" placeholder="Search..." onChange={(e) => getSearchDropdown(e.target.value)} onFocus={onFocus}/>
+          { active && dropDown.length > 0 && (
+            <ul className={styles.results}>
+              {dropDown.map(({ name, id }) => (
+                <li className={styles.result} key={id}>
+                  <Link href="/posts/[id]" as={`/post/${id}`}>
+                    <a>{name}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </form>
       </div>
       <div className={styles.centerLogo}>
