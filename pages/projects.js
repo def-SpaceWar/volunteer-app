@@ -10,7 +10,7 @@ const db = firebase.firestore()
 function ProjectCard({ name, url, description, img, time }) {
     if (description.length > 140) {
         let desc = ''
-        for (let i = 0; i < 77; i++) {
+        for (let i = 0; i < 140; i++) {
             desc += description[i]
         }
         description = desc + '...'
@@ -31,7 +31,7 @@ function ProjectCard({ name, url, description, img, time }) {
     return (
         <div>
             <div className={styles.projCard}>
-                <Image className={styles.projCardImg} src={img} width="300" height="300" />
+                <Image className={styles.projCardImg} src={img} width="300" height="300" alt="Logo" />
                 <div>
                     <h3 className={styles.projCardTitle}>{name}</h3>
                     <p className={styles.projCardDesc}>{description}</p>
@@ -45,12 +45,21 @@ function ProjectCard({ name, url, description, img, time }) {
 
 export default function Projects() {
     const [recent, setRecent] = useState([]);
+    const [mostMembers, setMostMembers] = useState([]);
 
     useEffect(() => {
         db.collection("Projects").orderBy('createdAt').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 let data = doc.data();
-                setRecent([...recent, (<ProjectCard name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
+                setRecent([...recent, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
+            });
+        })
+
+        const arr = [];
+        db.collection("Projects").orderBy('members', 'desc').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                let data = doc.data();
+                setMostMembers([...mostMembers, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
             });
         })
     }, [])
@@ -65,6 +74,7 @@ export default function Projects() {
             <br />
             <br />
             <br />
+            <br />
             <h1 className={styles.projTitle}>Most Recent</h1>
             <div className={styles.slider}>
                 {
@@ -75,10 +85,13 @@ export default function Projects() {
             </div>
             <h1 className={styles.projTitle}>Most Members</h1>
             <div className={styles.slider}>
-
+                {
+                    mostMembers.map((item) => {
+                        return item;
+                    })
+                }
             </div>
         </div>
     )
 }
 
-// St. Jude is leading the way the world understands, treats and defeats childhood cancer and other life-threatening diseases.
