@@ -1,318 +1,327 @@
 .navContainer {
-  height: 11vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  color: #5704DD;
-  background-color: #141414;
-  padding-top: 10px;
-  position: fixed;
-  top: 0px;
-  z-index: 1100;
+    height: 11vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #5704DD;
+    background-color: #141414;
+    padding-top: 10px;
+    position: fixed;
+    top: 0px;
+    z-index: 1100;
 }
 
 .results {
-  width: 25vw;
-  list-style: none;
-  overflow: hidden;
-  margin: -1.5em 0 0;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  left: 3.2%;
-  right: 0;
+    width: 25vw;
+    list-style: none;
+    overflow: hidden;
+    margin: -1.5em 0 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 3.2%;
+    right: 0;
 }
 
 .result {
-  background: #0070f3;
-  color: #eee;
-  margin: 0 0 9px;
-  padding: 6px;
+    background: #0070f3;
+    color: #eee;
+    margin: 0 0 9px;
+    padding: 6px;
 }
 
 .result a {
-  color: #eee;
+    color: #eee;
 }
 
 .centerLogo {
-  width: 25vw;
+    width: 25vw;
 }
 
 .centerLogo:hover {
-  width: 25vw;
-  cursor: pointer;
+    width: 25vw;
+    cursor: pointer;
 }
 
 .navLinks {
-  display: flex;
-  list-style-type: none;
-  width: 100%;
-  justify-content: space-around;
-  color: white;
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    justify-content: space-around;
+    color: white;
 }
 
 .navItem {
-  color: #fff;
-  background-color: #5704DD;
-  transition-property : color, background-color;
-  transition-duration : 0.4s;
-  padding: 10px;
-  border-radius: 10px;
+    color: #fff;
+    background-color: #5704DD;
+    transition-property : color, background-color;
+    transition-duration : 0.4s;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .navItemLogout {
-  color: #fff;
-  background-color: rgb(182, 0, 0);
-  transition-property: color, background-color;
-  transition-duration: 0.4s;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-
-.emailBtn {
-  color: #fff;
-  transition-duration: 0.4s;
-  padding: 10px;
+    color: #fff;
+    background-color: rgb(182, 0, 0);
+    transition-property: color, background-color;
+    transition-duration: 0.4s;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .navItemLogout:hover {
-  color: red;
-  background: #fff;
-  transition-property : color, background-color;
-  transition-duration : 0.5s;
+    color: red;
+    background: #fff;
+    transition-property : color, background-color;
+    transition-duration : 0.2s;
+}
+
+.emailBtn {
+    background-color: #098;
+    color: #fff;
+    transition-duration: 0.4s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.emailBtn:hover {
+    background-color: #fff;
+    color: #098;
+    transition-duration: 0.2s;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .navItem:hover {
-  color: #8a37ff;
-  background: #fff;
-  transition-property : color, background-color;
-  transition-duration : 0.5s;
+    color: #8a37ff;
+    background: #fff;
+    transition-property : color, background-color;
+    transition-duration : 0.2s;
 }
 
 .centerSearch {
-  width: 45vw;
-  display: flex;
-  padding: 10px;
-  transition: ease-in-out 0.2s;
+    width: 45vw;
+    display: flex;
+    padding: 10px;
+    transition: ease-in-out 0.2s;
 }
 
 .centerSearch input {
-  border-radius: 6px;
-  height: 4vh;
-  width: 25vw;
-  border: none;
-  transition: ease-in-out 0.2s;
+    border-radius: 6px;
+    height: 4vh;
+    width: 25vw;
+    border: none;
+    transition: ease-in-out 0.2s;
 }
 
 .centerSearch input:hover {
-  border-radius: 6px;
-  height: 4vh;
-  width: 25vw;
-  border: 3px solid #fe6684;
+    border-radius: 6px;
+    height: 4vh;
+    width: 25vw;
+    border: 3px solid #fe6684;
 }
 
 
 
 .mainContainer {
-  height: 78vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+    height: 78vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .svgContainer {
-  width: 50vw;
+    width: 50vw;
 }
 
 .svg {
-  width: 80vw;
+    width: 80vw;
 }
 
 .InfoContainer {
-  width: 50vw;
-  margin: 50px;
-  background-color: #fff;
-  border: 3px solid #fff;
-  border-radius: 35px;
-  padding: 0px 20px;
+    width: 50vw;
+    margin: 50px;
+    background-color: #fff;
+    border: 3px solid #fff;
+    border-radius: 35px;
+    padding: 0px 20px;
 }
 
 .joinButton{
-  background-color: #5704DD;
-  border: 3px solid #5704DD;
-  border-radius: 15px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  padding: 5px;
-  margin-top: 1rem;
-  color: #fff;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
+    background-color: #5704DD;
+    border: 3px solid #5704DD;
+    border-radius: 15px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    padding: 5px;
+    margin-top: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
 }
 
 .joinButton:hover{
-  background-color: #5704DD;
-  border: 3px solid #5704DD;
-  border-radius: 7px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  color: #fff;
-  padding: 5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
-  cursor: pointer;
+    background-color: #5704DD;
+    border: 3px solid #5704DD;
+    border-radius: 7px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    color: #fff;
+    padding: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
+    cursor: pointer;
 }
 
 .infoButton{
-  background-color: #5704DD;
-  border: 3px solid #5704DD;
-  border-radius: 15px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  margin-left: 4rem;
-  padding: 5px;
-  margin-top: 1rem;
-  color: #fff;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
+    background-color: #5704DD;
+    border: 3px solid #5704DD;
+    border-radius: 15px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    margin-left: 4rem;
+    padding: 5px;
+    margin-top: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
 }
 
 .infoButton:hover{
-  background-color: #5704DD;
-  border: 3px solid #5704DD;
-  border-radius: 7px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  color: #fff;
-  padding: 5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
-  cursor: pointer;
+    background-color: #5704DD;
+    border: 3px solid #5704DD;
+    border-radius: 7px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    color: #fff;
+    padding: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
+    cursor: pointer;
 }
 
 .info2Button{
-  background-color: #fe6684;
-  border: 3px solid #fe6684;
-  border-radius: 15px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  margin-left: 4rem;
-  padding: 5px;
-  margin-top: 1rem;
-  color: #fff;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
+    background-color: #fe6684;
+    border: 3px solid #fe6684;
+    border-radius: 15px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    margin-left: 4rem;
+    padding: 5px;
+    margin-top: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
 }
 
 .info2Button:hover{
-  background-color: #fe6684;
-  border: 3px solid #fe6684;
-  border-radius: 7px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  color: #fff;
-  padding: 5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
-  cursor: pointer;
+    background-color: #fe6684;
+    border: 3px solid #fe6684;
+    border-radius: 7px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    color: #fff;
+    padding: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
+    cursor: pointer;
 }
 
 .info3Button{
-  background-color: #fe6684;
-  border: 3px solid #fe6684;
-  border-radius: 15px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  color: #fff;
-  transition: ease 0.7s;
+    background-color: #fe6684;
+    border: 3px solid #fe6684;
+    border-radius: 15px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    color: #fff;
+    transition: ease 0.7s;
 }
 
 .info3Button:hover{
-  background-color: #fe6684;
-  border: 3px solid #fe6684;
-  border-radius: 7px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  color: #000;
-  transition: ease 0.7s;
-  cursor: pointer;
+    background-color: #fe6684;
+    border: 3px solid #fe6684;
+    border-radius: 7px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    color: #000;
+    transition: ease 0.7s;
+    cursor: pointer;
 }
 
 .signButton{
-  background-color: #fe6684;
-  border: 3px solid #fe6684;
-  border-radius: 15px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  padding: 5px;
-  margin-top: 1rem;
-  color: #fff;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
+    background-color: #fe6684;
+    border: 3px solid #fe6684;
+    border-radius: 15px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    padding: 5px;
+    margin-top: 1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
 }
 
 .signButton:hover{
-  background-color: #fe6684;
-  border: 3px solid #fe6684;
-  border-radius: 7px;
-  height: 3rem;
-  width: 9rem;
-  font-size: 19px;
-  color: #fff;
-  padding: 5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  transition: ease 0.7s;
-  cursor: pointer;
+    background-color: #fe6684;
+    border: 3px solid #fe6684;
+    border-radius: 7px;
+    height: 3rem;
+    width: 9rem;
+    font-size: 19px;
+    color: #fff;
+    padding: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: ease 0.7s;
+    cursor: pointer;
 }
 
 .cardTitle{
-  font-size: 40px;
+    font-size: 40px;
 }
 
 .cardSubTitle{
-  font-size: 40px;
-  text-align: left;
-  padding: 0rem 4rem;
+    font-size: 40px;
+    text-align: left;
+    padding: 0rem 4rem;
 }
 
 .cardSubDesc{
-  font-size: 1rem;
-  text-align: left;
-  padding: 0rem 4rem;
+    font-size: 1rem;
+    text-align: left;
+    padding: 0rem 4rem;
 }
 
 .cardFooter{
-  font-size: 15px;
+    font-size: 15px;
 }
 
 .logo {
-  font-size: 3rem;
-  height: 10vh;
+    font-size: 3rem;
+    height: 10vh;
 }
 
 .hr {
-  width: 1px;
-  height: 5vh;
-  margin: 1rem;
-  background: #c8c8c8;
+    width: 1px;
+    height: 5vh;
+    margin: 1rem;
+    background: #c8c8c8;
 }
 
 .dropDown{
@@ -320,60 +329,60 @@
 }
 
 .flexContainer {
-  display: flex;
-  width: 100%;
-  align-items: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 .CrossIcon{
-  width: 13vw;
+    width: 13vw;
 }
 
 .mainNonProfitCard {
-  width: 60vw;
-  height: auto;
-  padding: 1rem;
-  margin-bottom:1rem;
-  display: flex;
-  align-items: center;
-  border-radius: 17px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
+    width: 60vw;
+    height: auto;
+    padding: 1rem;
+    margin-bottom:1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
 }
 
 .centerText {
-  text-align: center;
-  color: #c8c8c8;
-  margin-top: 6rem;
-  transition-property: color;
-  transition-duration: 0.4s;
-  
-  font-display: underline;
+    text-align: center;
+    color: #c8c8c8;
+    margin-top: 6rem;
+    transition-property: color;
+    transition-duration: 0.4s;
+
+    font-display: underline;
 }
 
 .centerText:hover {
-  text-align: center;
-  color: #ad7bfd;
-  margin-top: 6rem;
-  transition-property: color;
-  transition-duration: 0.4s;
+    text-align: center;
+    color: #ad7bfd;
+    margin-top: 6rem;
+    transition-property: color;
+    transition-duration: 0.2s;
 }
 
 .footerText {
-  text-align: center;
-  color: #c8c8c8;
-  margin-top: 2rem;
-  transition-property: color;
-  transition-duration: 0.4s;
-  
-  font-display: underline;
+    text-align: center;
+    color: #c8c8c8;
+    margin-top: 2rem;
+    transition-property: color;
+    transition-duration: 0.4s;
+
+    font-display: underline;
 }
 
 .footerText:hover {
-  text-align: center;
-  color: #ad7bfd;
-  margin-top: 2rem;
-  transition-property: color;
-  transition-duration: 0.4s;
+    text-align: center;
+    color: #ad7bfd;
+    margin-top: 2rem;
+    transition-property: color;
+    transition-duration: 0.2s;
 }

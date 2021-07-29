@@ -14,13 +14,13 @@ export default function Login() {
     const [errorText, setErrorText] = useState('')
     const [localStorage, setLocalStorage] = useState(false);
 
-    useEffect(function() {
+    useEffect(function () {
         const localStorageInstance = new LocalStorage(window);
         setLocalStorage(localStorageInstance);
-        if(localStorageInstance.isLoggedIn()) {
+        if (localStorageInstance.isLoggedIn()) {
             console.log('Logged In')
         }
-    },[]);
+    }, []);
 
     function authUser(e, email, password) {
         e.preventDefault()
@@ -56,9 +56,9 @@ export default function Login() {
                     <input type="password" placeholder="Password" onChange={(e) => setFormData({...formData, password: e.target.value})} />
                     <br />
                     <center>
-                        <button type="submit" onClick={(e) => authUser(e, formData.email, formData.password) }>Submit</button>
+                        <button type="submit" onClick={(e) => authUser(e, formData.email, formData.password)}>Submit</button>
                     </center>
-                    { errorText && <center><p>{errorText}</p></center> }
+                    {errorText && <center><p>{errorText}</p></center>}
                 </form>
             </div>
         </div>

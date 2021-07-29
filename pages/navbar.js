@@ -15,13 +15,13 @@ export default function NavBar() {
     const [active, setActive] = useState(false)
     const [localStorage, setLocalStorage] = useState(false);
 
-    useEffect(function() {
+    useEffect(function () {
         const localStorageInstance = new LocalStorage(window);
         setLocalStorage(localStorageInstance);
-        if(localStorageInstance.isLoggedIn()) {
+        if (localStorageInstance.isLoggedIn()) {
             console.log('Logged In')
         }
-    },[]);
+    }, []);
 
     useEffect(() => {
         db.collection("Projects").get().then((querySnapshot) => {
@@ -121,16 +121,16 @@ export default function NavBar() {
                     {
                         localStorage && localStorage.isLoggedIn() && (
                             <>
-                            <li>
-                                <Link href="">
-                                    <p onClick={() => localStorage.setItem("loginInfo", "")}className={styles.navItemLogout}>Logout</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="">
-                                    <p className={styles.emailBtn}>{localStorage.getItem('loginEmail')}</p>
-                                </Link>
-                            </li>
+                                <li>
+                                    <Link href="">
+                                        <p onClick={() => localStorage.setItem("loginInfo", "")} className={styles.navItemLogout}>Logout</p>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="">
+                                        <p className={styles.emailBtn}>{localStorage.getItem('loginEmail')}</p>
+                                    </Link>
+                                </li>
                             </>
                         )
                     }
