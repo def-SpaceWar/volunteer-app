@@ -2,7 +2,8 @@ import Head from 'next/head'
 import styles from '../styles/Form.module.css'
 import NavBar from './navbar'
 import firebase from './firebaseInit';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import LocalStorage from './localStorage'
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -10,20 +11,31 @@ export default function Login() {
         password: '',
     })
 
+    const [errorText, setErrorText] = useState('')
+    const [localStorage, setLocalStorage] = useState(false);
+
+    useEffect(function() {
+        const localStorageInstance = new LocalStorage(window);
+        setLocalStorage(localStorageInstance);
+        if(localStorageInstance.isLoggedIn()) {
+            console.log('Logged In')
+        }
+    },[]);
+
     function authUser(e, email, password) {
         e.preventDefault()
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                // Signed in
+                setErrorText('')
                 var user = userCredential.user;
-                // ...
-                console.log(user)
+                localStorage.setItem('loginInfo', user.uid);
+                localStorage.setItem('loginEmail', user.email);
+                window.location.replace(`/projects`)
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                console.log(errorMessage, errorCode);
-                return;
+                setErrorText('No Account Found!')
             });
     }
 
@@ -44,8 +56,9 @@ export default function Login() {
                     <input type="password" placeholder="Password" onChange={(e) => setFormData({...formData, password: e.target.value})} />
                     <br />
                     <center>
-                        <button type="submit" onClick={(e) => authUser(e, formData.email, formData.password)}>Submit</button>
+                        <button type="submit" onClick={(e) => authUser(e, formData.email, formData.password) }>Submit</button>
                     </center>
+                    { errorText && <center><p>{errorText}</p></center> }
                 </form>
             </div>
         </div>

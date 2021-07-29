@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {useState, useEffect, useCallback, useRef} from 'react'
 import firebase from './firebaseInit';
+import LocalStorage from './localStorage'
 
 const db = firebase.firestore()
 
@@ -12,6 +13,15 @@ export default function NavBar() {
     const [dropDown, setDropDown] = useState([]);
     const searchRef = useRef(null)
     const [active, setActive] = useState(false)
+    const [localStorage, setLocalStorage] = useState(false);
+
+    useEffect(function() {
+        const localStorageInstance = new LocalStorage(window);
+        setLocalStorage(localStorageInstance);
+        if(localStorageInstance.isLoggedIn()) {
+            console.log('Logged In')
+        }
+    },[]);
 
     useEffect(() => {
         db.collection("Projects").get().then((querySnapshot) => {
@@ -87,21 +97,43 @@ export default function NavBar() {
             </div>
             <div className={styles.centerLogo}>
                 <ui className={styles.navLinks}>
-                    <li>
-                        <Link href="/login">
-                            <p className={styles.navItem}>Login</p>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/signup">
-                            <p className={styles.navItem}>Sign Up</p>
-                        </Link>
-                    </li>
+                    {
+                        localStorage && !localStorage.isLoggedIn() && (
+                            <>
+                                <li>
+                                    <Link href="/login">
+                                        <p className={styles.navItem}>Login</p>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/signup">
+                                        <p className={styles.navItem}>Sign Up</p>
+                                    </Link>
+                                </li>
+                            </>
+                        )
+                    }
                     <li>
                         <Link href="/projects">
                             <p className={styles.navItem}>Projects</p>
                         </Link>
                     </li>
+                    {
+                        localStorage && localStorage.isLoggedIn() && (
+                            <>
+                            <li>
+                                <Link href="">
+                                    <p onClick={() => localStorage.setItem("loginInfo", "")}className={styles.navItemLogout}>Logout</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="">
+                                    <p className={styles.emailBtn}>{localStorage.getItem('loginEmail')}</p>
+                                </Link>
+                            </li>
+                            </>
+                        )
+                    }
                 </ui>
             </div>
         </div>

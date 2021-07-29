@@ -2,7 +2,8 @@ import Image from 'next/image'
 import NavBar from '../navbar'
 import styles from '../../styles/Infopage.module.css'
 import database from '../firebaseInit'
-import { useState } from 'react'
+import LocalStorage from '../localStorage'
+import { useState, useEffect } from 'react'
 
 const db = database.firestore()
 
@@ -30,6 +31,16 @@ const Post = ({ params }) => {
         description: 'This project isnt found',
         location: 'Your Mom\'s House'
     });
+
+    const [localStorage, setLocalStorage] = useState(false);
+
+    useEffect(function() {
+        const localStorageInstance = new LocalStorage(window);
+        setLocalStorage(localStorageInstance);
+        if(localStorageInstance.isLoggedIn()) {
+            console.log('Logged In')
+        }
+    },[]);
 
     const pid = params.pid;
 
@@ -69,7 +80,11 @@ const Post = ({ params }) => {
                         <p className={styles.postMembers}>Members: {global.members}</p>
                         <p className={styles.postEmail}>Email: {global.email}</p>
                         <p className={styles.postPhone}>Phone Number: {global.phone}</p>
-                        <button className={styles.postButton}>Join Now</button>
+                        <button className={styles.postButton} onClick={() => {
+                            if (localStorage && !localStorage.isLoggedIn()) {
+                                window.location.replace('/login')
+                            }
+                        }}>{localStorage && localStorage.isLoggedIn() ? 'Join' : 'Sign In To Join!'}</button>
                         <br />
                         <button className={styles.postButton} >Share</button>
                     </div>

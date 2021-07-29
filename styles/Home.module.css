@@ -58,9 +58,31 @@
   background-color: #5704DD;
   transition-property : color, background-color;
   transition-duration : 0.4s;
-  
   padding: 10px;
   border-radius: 10px;
+}
+
+.navItemLogout {
+  color: #fff;
+  background-color: rgb(182, 0, 0);
+  transition-property: color, background-color;
+  transition-duration: 0.4s;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+.emailBtn {
+  color: #fff;
+  transition-duration: 0.4s;
+  padding: 10px;
+}
+
+.navItemLogout:hover {
+  color: red;
+  background: #fff;
+  transition-property : color, background-color;
+  transition-duration : 0.5s;
 }
 
 .navItem:hover {
