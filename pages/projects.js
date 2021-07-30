@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Projects.module.css'
 import NavBar from './navbar'
 import firebase from './firebaseInit';
@@ -36,7 +37,7 @@ function ProjectCard({name, url, description, img, time}) {
                     <h3 className={styles.projCardTitle}>{name}</h3>
                     <p className={styles.projCardDesc}>{description}</p>
                     <p className={styles.projCardTimeStamp}>{days} Days, {hours} Hours, {minutes} Minutes, {seconds} Seconds</p>
-                    <a href={`/post/${url}`}><button className={styles.projCardLink}>Learn More</button></a>
+                    <Link href={`/post/${url}`}><button className={styles.projCardLink}>Learn More</button></Link>
                 </div>
             </div>
         </div>
@@ -75,7 +76,10 @@ export default function Projects() {
             <br />
             <br />
             <br />
+            <div className={styles.flex}>
             <h1 className={styles.projTitle}>Most Recent</h1>
+            <Link href="/post"><button className={styles.postButton}><img src="https://static.thenounproject.com/png/25603-200.png" /></button></Link>
+            </div>
             <div className={styles.slider}>
                 {
                     recent.map((item) => {

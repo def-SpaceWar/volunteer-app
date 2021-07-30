@@ -28,20 +28,20 @@ export default function Home() {
             community and make it a better place for everyone! 😃
           </p>
           <div className={styles.flexContainer}>
-            <Link href="/signup">
+            <a href="/signup">
               <button className={styles.joinButton}>
                 <strong>Join Now!</strong>
               </button>
-            </Link>
+            </a>  
             <div className={styles.hr}></div>
-            <Link href="/login">
+            <a href="/login">
               <button className={styles.signButton}>
                 <strong>Sign In!</strong>
               </button>
-            </Link>
+            </a>
           </div>
           <p className={styles.cardFooter}>
-            Made with love by VolunteerUP Dev Team ❤️
+            Made with love by VolunteerUP Dev Team ❤️ 
           </p>
         </div>
         <div className={styles.svgContainer}>

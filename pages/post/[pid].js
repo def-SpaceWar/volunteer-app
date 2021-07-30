@@ -38,7 +38,19 @@ const Post = ({ params }) => {
         const localStorageInstance = new LocalStorage(window);
         setLocalStorage(localStorageInstance);
         if(localStorageInstance.isLoggedIn()) {
-            console.log('Logged In')
+            let data, doc;
+            db.collection("Projects").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    if (doc.id == pid) {
+                        data = doc.data();
+                        doc = doc;
+                        db.collection("Projects").doc(doc.id).update({
+                            views: data.views + 1
+                        });
+                    }
+                });
+            });
+            
         }
     },[]);
 
@@ -55,7 +67,7 @@ const Post = ({ params }) => {
                     location: data.location,
                     email: data.email,
                     members: data.members,
-                    phone: data['phone number']
+                    phone: data['phone_number']
                 });
             }
         });

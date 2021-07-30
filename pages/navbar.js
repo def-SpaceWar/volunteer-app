@@ -122,14 +122,12 @@ export default function NavBar() {
                         localStorage && localStorage.isLoggedIn() && (
                             <>
                                 <li>
-                                    <Link href="">
+                                    <Link href="">  
                                         <p onClick={() => localStorage.setItem("loginInfo", "")} className={styles.navItemLogout}>Logout</p>
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="">
-                                        <p className={styles.emailBtn}>{localStorage.getItem('loginEmail')}</p>
-                                    </Link>
+                                <li className={styles.floatLeft}>
+                                    <p className={styles.emailBtn}>{localStorage.getItem('loginEmail')}</p>
                                 </li>
                             </>
                         )

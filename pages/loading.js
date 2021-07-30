@@ -2,7 +2,7 @@ import NavBar from './navbar'
 import styles from '../styles/Loading.module.css'
 import Head from 'next/head'
 
-export default function Custom404() {
+export default function Loading() {
     return (
         <div className="container">
             <Head>

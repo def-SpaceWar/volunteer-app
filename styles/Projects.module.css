@@ -71,6 +71,26 @@
   border: 3px solid #ff5174;
 }
 
+.postButton {
+  padding: 10px;
+  margin: 10px;
+  height: 8vh;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.postButton img {
+  height: 5vh;
+}
+
 .space {
   width: 4vh;
   height: 10vh;

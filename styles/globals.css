@@ -24,3 +24,32 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  display: none;
+  background: blue;
+  list-style-type: none;
+}
+
+li:hover > ul,
+li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+li ul li {
+  clear: both;
+  max-width: 10vw;
+}
+
+li ul {
+  position: absolute;
+  right: 0;
+  width: 10vw;
+} */
