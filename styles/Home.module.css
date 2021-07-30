@@ -37,11 +37,10 @@
 }
 
 .centerLogo {
-    width: 25vw;
+    width: 30vw;
 }
 
 .centerLogo:hover {
-    width: 25vw;
     cursor: pointer;
 }
 
@@ -99,7 +98,7 @@
 }
 
 .centerSearch {
-    width: 45vw;
+    width: 50vw;
     display: flex;
     padding: 10px;
     transition: ease-in-out 0.2s;

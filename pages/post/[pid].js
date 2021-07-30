@@ -33,6 +33,7 @@ const Post = ({ params }) => {
     });
 
     const [localStorage, setLocalStorage] = useState(false);
+    const [joined, setJoined] = useState(false);
 
     useEffect(function() {
         const localStorageInstance = new LocalStorage(window);
@@ -47,6 +48,7 @@ const Post = ({ params }) => {
                         db.collection("Projects").doc(doc.id).update({
                             views: data.views + 1
                         });
+                        checkIfJoined(doc.id, localStorageInstance);
                     }
                 });
             });
@@ -73,6 +75,19 @@ const Post = ({ params }) => {
         });
     });
 
+    function checkIfJoined(id, ls) {
+        const result = db.collection("Joins").where("email", "==", ls.getItem('loginEmail'))
+        .onSnapshot((snapshot) => {
+            snapshot.forEach((userSnapshot) => {
+                let data = userSnapshot.data()
+                if (data.groupId == id) {
+                    setJoined(true);
+                }
+            });
+        });
+    }
+
+
     return (
         <div className={styles.container} >
             <NavBar />
@@ -95,10 +110,19 @@ const Post = ({ params }) => {
                         <button className={styles.postButton} onClick={() => {
                             if (localStorage && !localStorage.isLoggedIn()) {
                                 window.location.replace('/login')
+                                return;
                             }
-                        }}>{localStorage && localStorage.isLoggedIn() ? 'Join' : 'Sign In To Join!'}</button>
+
+                            if (!joined && localStorage) {
+                                db.collection("Joins").add({
+                                    groupId: pid,
+                                    email: localStorage.getItem('loginEmail')
+                                });
+                            }   
+
+                        }}>{localStorage && localStorage.isLoggedIn() ? joined && joined ? 'Joined' : 'Join' : 'Sign In To Join!'}</button>
                         <br />
-                        <a href="https://twitter.com/intent/tweet?text=VolunteerUP%20helped%20me%20find%20MY%20nonprofit%20of%20choice%20check%20them%20out%20right%20here!%20=%3E&url=http://localhost:3000/" target="popup"><button className={styles.postButton} >Share</button></a>
+                        <a href="https://twitter.com/intent/tweet?text=VolunteerUP%20helped%20me%20find%20MY%20nonprofit%20of%20choice%20check%20them%20out%20right%20here!%20=%3E&url= http://localhost:3000/" target="popup"><button className={styles.postButton} >Share</button></a>
                     </div>
                 </div>
                 <p className={styles.postDescription}>{global.description}</p>

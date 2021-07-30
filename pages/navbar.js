@@ -113,6 +113,15 @@ export default function NavBar() {
                             </>
                         )
                     }
+                    {
+                        localStorage && localStorage.isLoggedIn() && (
+                            <li>
+                                <Link href="/joined">  
+                                    <p className={styles.navItem}>Joined</p>
+                                </Link>
+                            </li>
+                        )
+                    }
                     <li>
                         <Link href="/projects">
                             <p className={styles.navItem}>Projects</p>
