@@ -27,7 +27,7 @@ export default function NavBar() {
         db.collection("Projects").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 data = doc.data();
-                setResults([
+                setResults(results => [
                     ...results,
                     {
                         name: data.name,

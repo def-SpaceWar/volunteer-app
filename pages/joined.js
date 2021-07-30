@@ -29,7 +29,7 @@ const Post = () => {
                 .get()
                 .then(function(doc) {
                     let data = doc.data();
-                    setJoinedGroups([...joinedGroups, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
+                    setJoinedGroups(joinedGroups => [...joinedGroups, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
                 }).catch(function(error) {
                     console.log("Error getting document:", error);
                 });

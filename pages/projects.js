@@ -49,10 +49,10 @@ export default function Projects() {
     const [mostMembers, setMostMembers] = useState([]);
 
     useEffect(() => {
-        db.collection("Projects").orderBy('createdAt').get().then((querySnapshot) => {
+        db.collection("Projects").orderBy('createdAt', 'desc').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 let data = doc.data();
-                setRecent([...recent, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
+                setRecent(recent => [...recent, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
             });
         })
 
@@ -60,7 +60,7 @@ export default function Projects() {
         db.collection("Projects").orderBy('members', 'desc').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 let data = doc.data();
-                setMostMembers([...mostMembers, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
+                setMostMembers(mostMembers => [...mostMembers, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
             });
         })
     }, [])
