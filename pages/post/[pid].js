@@ -13,16 +13,6 @@ export function getServerSideProps(context) {
     };
 }
 
-// const db = [
-//     {
-//         pid: '129789y21635237',
-//         imgSrc: 'https://yt3.ggpht.com/ytc/AKedOLTJtWKMxZXxgvr20Oy0jglCSpxta-vVgnYJmI-kDg=s900-c-k-c0x00ffffff-no-rj',
-//         name: 'St. Judes',
-//         description: "St. Judes is an amazing organization working to research cancer and save childrens' lives!"
-//         location: 'Memphis Tennessee'
-//     }
-// ]
-
 const Post = ({params}) => {
     let data;
     let [global, setGlobal] = useState({
@@ -39,7 +29,7 @@ const Post = ({params}) => {
         const localStorageInstance = new LocalStorage(window);
         setLocalStorage(localStorageInstance);
         if (localStorageInstance.isLoggedIn()) {
-            let data, doc;
+            let data;
             db.collection("Projects").get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     if (doc.id == pid) {
@@ -76,7 +66,7 @@ const Post = ({params}) => {
     });
 
     function checkIfJoined(id, ls) {
-        const result = db.collection("Joins").where("email", "==", ls.getItem('loginEmail'))
+        db.collection("Joins").where("email", "==", ls.getItem('loginEmail'))
             .onSnapshot((snapshot) => {
                 snapshot.forEach((userSnapshot) => {
                     let data = userSnapshot.data()
