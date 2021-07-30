@@ -1,4 +1,4 @@
-import Head from &apos;next/head'
+import Head from 'next/head'
 import styles from '../styles/Form.module.css'
 import NavBar from './navbar'
 import Link from 'next/link'
