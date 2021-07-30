@@ -77,8 +77,8 @@ export default function Projects() {
             <br />
             <br />
             <div className={styles.flex}>
-            <h1 className={styles.projTitle}>Most Recent</h1>
-            <Link href="/post"><button className={styles.postButton}><Image src="https://static.thenounproject.com/png/25603-200.png" width="" height="" /></button></Link>
+                <h1 className={styles.projTitle}>Most Recent</h1>
+                <Link href="/post"><button className={styles.postButton}><Image src="https://static.thenounproject.com/png/25603-200.png" width="200" height="200" /></button></Link>
             </div>
             <div className={styles.slider}>
                 {

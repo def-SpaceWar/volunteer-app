@@ -3,13 +3,13 @@ import NavBar from '../navbar'
 import styles from '../../styles/Infopage.module.css'
 import database from '../firebaseInit'
 import LocalStorage from '../localStorage'
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 
 const db = database.firestore()
 
 export function getServerSideProps(context) {
     return {
-        props: { params: context.params }
+        props: {params: context.params}
     };
 }
 
@@ -23,7 +23,7 @@ export function getServerSideProps(context) {
 //     }
 // ]
 
-const Post = ({ params }) => {
+const Post = ({params}) => {
     let data;
     let [global, setGlobal] = useState({
         imgSrc: '/hackathon_logo.png',
@@ -35,10 +35,10 @@ const Post = ({ params }) => {
     const [localStorage, setLocalStorage] = useState(false);
     const [joined, setJoined] = useState(false);
 
-    useEffect(function() {
+    useEffect(function () {
         const localStorageInstance = new LocalStorage(window);
         setLocalStorage(localStorageInstance);
-        if(localStorageInstance.isLoggedIn()) {
+        if (localStorageInstance.isLoggedIn()) {
             let data, doc;
             db.collection("Projects").get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
@@ -52,9 +52,9 @@ const Post = ({ params }) => {
                     }
                 });
             });
-            
+
         }
-    },[]);
+    }, []);
 
     const pid = params.pid;
 
@@ -77,14 +77,14 @@ const Post = ({ params }) => {
 
     function checkIfJoined(id, ls) {
         const result = db.collection("Joins").where("email", "==", ls.getItem('loginEmail'))
-        .onSnapshot((snapshot) => {
-            snapshot.forEach((userSnapshot) => {
-                let data = userSnapshot.data()
-                if (data.groupId == id) {
-                    setJoined(true);
-                }
+            .onSnapshot((snapshot) => {
+                snapshot.forEach((userSnapshot) => {
+                    let data = userSnapshot.data()
+                    if (data.groupId == id) {
+                        setJoined(true);
+                    }
+                });
             });
-        });
     }
 
 
@@ -118,9 +118,26 @@ const Post = ({ params }) => {
                                     groupId: pid,
                                     email: localStorage.getItem('loginEmail')
                                 });
-                            }   
-
-                        }}>{localStorage && localStorage.isLoggedIn() ? joined && joined ? 'Joined' : 'Join' : 'Sign In To Join!'}</button>
+                            } else if (joined && localStorage) {
+                                db.collection("Joins")
+                                    .where("groupId", "==", pid)
+                                    .onSnapshot((snapshot) => {
+                                        snapshot.forEach((userSnapshot) => {
+                                            let data = userSnapshot.data()
+                                            data.id = userSnapshot.id;
+                                            if (data.email == localStorage.getItem("loginEmail")) {
+                                                let id = data.id;
+                                                db.collection("Joins").doc(`${id}`).delete().then(() => {
+                                                    console.log("Document successfully deleted!");
+                                                    setJoined(false);
+                                                }).catch((error) => {
+                                                    console.error("Error removing document: ", error);
+                                                });
+                                            }
+                                        });
+                                    });
+                            }
+                        }}>{localStorage && localStorage.isLoggedIn() ? joined && joined ? 'Leave' : 'Join' : 'Sign In To Join!'}</button>
                         <br />
                         <a href="https://twitter.com/intent/tweet?text=VolunteerUP%20helped%20me%20find%20MY%20nonprofit%20of%20choice%20check%20them%20out%20right%20here!%20=%3E&url= http://localhost:3000/" target="popup"><button className={styles.postButton} >Share</button></a>
                     </div>

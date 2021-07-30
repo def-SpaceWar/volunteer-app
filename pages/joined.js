@@ -3,7 +3,7 @@ import NavBar from './navbar'
 import styles from '../styles/Projects.module.css'
 import database from './firebaseInit'
 import LocalStorage from './localStorage'
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import {ProjectCard} from './projects'
 
 const db = database.firestore()
@@ -21,20 +21,20 @@ const Post = () => {
         }
 
         db.collection("Joins").where("email", "==", localStorageInstance.getItem('loginEmail'))
-        .onSnapshot((snapshot) => {
-            snapshot.forEach((userSnapshot) => {
-                let data = userSnapshot.data()
-                let groupId = data.groupId;
-                db.collection("Projects").doc(groupId)
-                .get()
-                .then(function(doc) {
-                    let data = doc.data();
-                    setJoinedGroups(joinedGroups => [...joinedGroups, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
-                }).catch(function(error) {
-                    console.log("Error getting document:", error);
+            .onSnapshot((snapshot) => {
+                snapshot.forEach((userSnapshot) => {
+                    let data = userSnapshot.data()
+                    let groupId = data.groupId;
+                    db.collection("Projects").doc(groupId)
+                        .get()
+                        .then(function (doc) {
+                            let data = doc.data();
+                            setJoinedGroups(joinedGroups => [...joinedGroups, (<ProjectCard key={doc.id} name={data.name} url={doc.id} description={data.description} img={data.image} time={data.createdAt} />)])
+                        }).catch(function (error) {
+                            console.log("Error getting document:", error);
+                        });
                 });
             });
-        });
     }, [])
 
 

@@ -6,7 +6,8 @@ module.exports = {
             'upload.wikimedia.org',
             'yt3.ggpht.com',
             'localhost',
-            'encrypted-tbn0.gstatic.com'
+            'encrypted-tbn0.gstatic.com',
+            'static.thenounproject.com'
         ],
     },
 }
