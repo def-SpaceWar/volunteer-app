@@ -22,7 +22,7 @@ export default function postForm() {
 
     function postData(e) {
         e.preventDefault()
-        if (!data.image.includes('http') || data.name == '' || data.description == '' || data.email == '' || data.phone_number == '' || data.image == '' || data.location == '' || data.member == '') return window.location.replace('/post');
+        if (!data.image.includes('http') || data.name == '' || data.description == '' || (!data.email.includes('@')) || data.phone_number == '' || data.image == '' || data.location == '') return window.location.replace('/post');
         db.collection("Projects").add(data);
     }
 
@@ -49,8 +49,6 @@ export default function postForm() {
                     <input placeholder="Link of Image" onChange={(e) => setData({...data, image: e.target.value})} />
                     <br />
                     <input placeholder="Location" onChange={(e) => setData({...data, location: e.target.value})} />
-                    <br />
-                    <input placeholder="Members" onChange={(e) => setData({...data, members: parseInt(e.target.value) })} />
                     <br />
                     <center>
                         <button type="submit" onClick={(e) => postData(e)}>Submit</button>

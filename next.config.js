@@ -5,7 +5,8 @@ module.exports = {
             'redcrossyouth.org',
             'upload.wikimedia.org',
             'yt3.ggpht.com',
-            'localhost'
+            'localhost',
+            'encrypted-tbn0.gstatic.com'
         ],
     },
 }

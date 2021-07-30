@@ -98,7 +98,7 @@ const Post = ({ params }) => {
                             }
                         }}>{localStorage && localStorage.isLoggedIn() ? 'Join' : 'Sign In To Join!'}</button>
                         <br />
-                        <button className={styles.postButton} >Share</button>
+                        <a href="https://twitter.com/intent/tweet?text=VolunteerUP%20helped%20me%20find%20MY%20nonprofit%20of%20choice%20check%20them%20out%20right%20here!%20=%3E&url=http://localhost:3000/" target="popup"><button className={styles.postButton} >Share</button></a>
                     </div>
                 </div>
                 <p className={styles.postDescription}>{global.description}</p>
