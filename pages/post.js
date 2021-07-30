@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react';
 
 const db = firebaseInit.firestore()
 
-export default function postForm() {
+export default function PostForm() {
     const [data, setData] = useState({
         name: '',
         description: '',

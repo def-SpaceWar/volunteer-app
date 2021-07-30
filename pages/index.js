@@ -28,17 +28,17 @@ export default function Home() {
             community and make it a better place for everyone! 😃
           </p>
           <div className={styles.flexContainer}>
-            <a href="/signup">
+            <Link href="/signup">
               <button className={styles.joinButton}>
                 <strong>Join Now!</strong>
               </button>
-            </a>  
+            </Link>  
             <div className={styles.hr}></div>
-            <a href="/login">
+            <Link href="/login">
               <button className={styles.signButton}>
                 <strong>Sign In!</strong>
               </button>
-            </a>
+            </Link>
           </div>
           <p className={styles.cardFooter}>
             Made with love by VolunteerUP Dev Team ❤️ 
