@@ -2,8 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/YAY.module.css'
 import Link from 'next/link'
 
-//dw abt this taptap or spacewar >:D < glow
-
 export default function Login() {
     return (
         <div className={styles.container}>
