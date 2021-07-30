@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/YAY.module.css'
-import NavBar from './navbar'
 import Link from 'next/link'
-
-//dw abt this taptap or spacewar >:D < glow
 
 export default function Login() {
     return (
