@@ -34,6 +34,7 @@ export default function SignUp() {
                 var user = userCredential.user;
                 setErrorText('')
                 localStorage.setItem("loginInfo", user.uid)
+                localStorage.setItem("loginEmail", user.email)
                 window.location.replace(`/projects`)
             })
             .catch((error) => {
