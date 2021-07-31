@@ -1,9 +1,9 @@
 import NavBar from './navbar'
 import styles from '../styles/Form.module.css'
 import Head from 'next/head'
-import firebaseInit from './firebaseInit';
+import firebaseInit from '../public/firebaseInit';
 import firebase from 'firebase';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const db = firebaseInit.firestore()
 
@@ -38,8 +38,8 @@ export default function PostForm() {
             <div className={styles.centerForm}>
                 <form>
                     <h1>Post</h1>
-                    <input placeholder="Name" onChange={(e) => setData({...data, name: e.target.value})}/>
-                    <br />  
+                    <input placeholder="Name" onChange={(e) => setData({...data, name: e.target.value})} />
+                    <br />
                     <input placeholder="Description" onChange={(e) => setData({...data, description: e.target.value})} />
                     <br />
                     <input placeholder="Email" type="email" onChange={(e) => setData({...data, email: e.target.value})} />

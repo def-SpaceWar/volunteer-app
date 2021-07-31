@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Projects.module.css'
 import NavBar from './navbar'
-import firebase from './firebaseInit';
+import firebase from '../public/firebaseInit';
 import {useState, useEffect} from 'react';
 
 const db = firebase.firestore()

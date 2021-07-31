@@ -2,8 +2,8 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import {useState, useEffect, useCallback, useRef} from 'react'
-import firebase from './firebaseInit';
-import LocalStorage from './localStorage'
+import firebase from '../public/firebaseInit';
+import LocalStorage from '../public/localStorage'
 
 const db = firebase.firestore()
 
@@ -116,7 +116,7 @@ export default function NavBar() {
                     {
                         localStorage && localStorage.isLoggedIn() && (
                             <li>
-                                <Link href="/joined">  
+                                <Link href="/joined">
                                     <p className={styles.navItem}>Joined</p>
                                 </Link>
                             </li>
@@ -131,7 +131,7 @@ export default function NavBar() {
                         localStorage && localStorage.isLoggedIn() && (
                             <>
                                 <li>
-                                    <Link href="">  
+                                    <Link href="">
                                         <p onClick={() => localStorage.setItem("loginInfo", "")} className={styles.navItemLogout}>Logout</p>
                                     </Link>
                                 </li>

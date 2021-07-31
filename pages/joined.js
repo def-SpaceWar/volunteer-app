@@ -1,8 +1,7 @@
-import Image from 'next/image'
 import NavBar from './navbar'
 import styles from '../styles/Projects.module.css'
-import database from './firebaseInit'
-import LocalStorage from './localStorage'
+import database from '../public/firebaseInit'
+import LocalStorage from '../public/localStorage'
 import {useState, useEffect} from 'react'
 import {ProjectCard} from './projects'
 

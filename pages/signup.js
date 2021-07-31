@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Form.module.css'
 import NavBar from './navbar'
-import firebase from './firebaseInit';
+import firebase from '../public/firebaseInit';
 import {useState, useEffect} from 'react';
-import LocalStorage from './localStorage';
+import LocalStorage from '../public/localStorage';
 
 export default function SignUp() {
 
